@@ -18,424 +18,426 @@
         </ul>
       </nav>
     </header>
-    <h1>An Unreasonably Conservative Methodology For Valuing Publicly-Traded Equity Securities</h1>
-    <h2>An Adaptation of Modern Methods to Suite Traditional Investment Approaches</h2>
-    <p>
-      For the last 7 years, I have devoted tremendous time to analyzing publicly-traded equity securities for investment purposes. During that time, I found that the most important variable to investment success is the methodology used to value those securities. In this article, I summarize my key insights on valuation such that an investor with intermediate knowledge of corporate finance theory, financial markets, and accounting can apply them in their valuation and investing.
-    </p>
-    <p>
-      If I expect a company to pay dividends of US$40M in 13 years, US$50M the year following, and US$60M per year for the rest of its (effectively) infinite existence, then the mathematics of infinite geometric series imputes a valuation of at least US$180M; assuming that if you didn’t buy this company, you could earn as much as 10% per annum in perpetuity elsewhere, with approximately equal certainty. If there are 78M shares outstanding, then one share of the company is worth at least US$2.30:
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mtable displaystyle="true" columnalign="right left">
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mtext>US$180M</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>=</mo>
-              <mfrac>
-                <mtext>US$40M</mtext>
-                <mrow>
-                  <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
-                  <mn>1</mn>
-                  <mo>+</mo>
-                  <mtext>10%</mtext>
-                  <msup>
-                    <mo form="postfix" stretchy="false">)</mo>
-                    <mn>13</mn>
-                  </msup>
-                </mrow>
-              </mfrac>
-              <mo>+</mo>
-              <mfrac>
-                <mtext>US$50M</mtext>
-                <mrow>
-                  <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
-                  <mn>1</mn>
-                  <mo>+</mo>
-                  <mtext>10%</mtext>
-                  <msup>
-                    <mo form="postfix" stretchy="false">)</mo>
-                    <mn>14</mn>
-                  </msup>
-                </mrow>
-              </mfrac>
-              <mo>+</mo>
-              <mfrac>
-                <mrow>
-                  <mo fence="true" form="prefix">(</mo>
-                  <mfrac>
-                    <mtext>US$60M</mtext>
-                    <mrow>
-                      <mtext>10%</mtext>
-                      <mo>−</mo>
-                      <mtext>0%</mtext>
-                    </mrow>
-                  </mfrac>
-                  <mo fence="true" form="postfix">)</mo>
-                </mrow>
-                <mrow>
-                  <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
-                  <mn>1</mn>
-                  <mo>+</mo>
-                  <mtext>10%</mtext>
-                  <msup>
-                    <mo form="postfix" stretchy="false">)</mo>
-                    <mn>14</mn>
-                  </msup>
-                </mrow>
-              </mfrac>
-            </mrow>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mtext>US$2.30</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>=</mo>
-              <mfrac>
-                <mtext>US$180M</mtext>
-                <mtext>78M</mtext>
-              </mfrac>
-            </mrow>
-          </mtd>
-        </mtr>
-      </mtable>
-    </math>
-    <p>
-      Given the ~50% returns I’d like to earn, I cannot purchase shares of this company at any price higher than US$1.50. Furthermore, supposing the company pays out 50% of year-13 earnings as a dividend and earnings grow at 5% per annum on average, the company’s earnings-per share (EPS) next year is approximately US$0.57; implying a low forward-year going-in P/E of ~2.6x:
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mtable displaystyle="true" columnalign="left right left right" style="width:100%;">
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
-            <mtext>US$0.57</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>=</mo>
-              <mfrac>
-                <mrow>
-                  <mo fence="true" form="prefix">[</mo>
-                  <mfrac>
-                    <mrow>
-                      <mo fence="true" form="prefix">(</mo>
-                      <mfrac>
-                        <mtext>US$40M</mtext>
-                        <mtext>50%</mtext>
-                      </mfrac>
-                      <mo fence="true" form="postfix">)</mo>
-                    </mrow>
+    <main>
+      <h1>An Unreasonably Conservative Methodology For Valuing Publicly-Traded Equity Securities</h1>
+      <h2>An Adaptation of Modern Methods to Suite Traditional Investment Approaches</h2>
+      <p>
+        For the last 7 years, I have devoted tremendous time to analyzing publicly-traded equity securities for investment purposes. During that time, I found that the most important variable to investment success is the methodology used to value those securities. In this article, I summarize my key insights on valuation such that an investor with intermediate knowledge of corporate finance theory, financial markets, and accounting can apply them in their valuation and investing.
+      </p>
+      <p>
+        If I expect a company to pay dividends of US$40M in 13 years, US$50M the year following, and US$60M per year for the rest of its (effectively) infinite existence, then the mathematics of infinite geometric series imputes a valuation of at least US$180M; assuming that if you didn’t buy this company, you could earn as much as 10% per annum in perpetuity elsewhere, with approximately equal certainty. If there are 78M shares outstanding, then one share of the company is worth at least US$2.30:
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mtable displaystyle="true" columnalign="right left">
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mtext>US$180M</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>=</mo>
+                <mfrac>
+                  <mtext>US$40M</mtext>
+                  <mrow>
+                    <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mtext>10%</mtext>
                     <msup>
+                      <mo form="postfix" stretchy="false">)</mo>
+                      <mn>13</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mtext>US$50M</mtext>
+                  <mrow>
+                    <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mtext>10%</mtext>
+                    <msup>
+                      <mo form="postfix" stretchy="false">)</mo>
+                      <mn>14</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mrow>
+                    <mo fence="true" form="prefix">(</mo>
+                    <mfrac>
+                      <mtext>US$60M</mtext>
+                      <mrow>
+                        <mtext>10%</mtext>
+                        <mo>−</mo>
+                        <mtext>0%</mtext>
+                      </mrow>
+                    </mfrac>
+                    <mo fence="true" form="postfix">)</mo>
+                  </mrow>
+                  <mrow>
+                    <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mtext>10%</mtext>
+                    <msup>
+                      <mo form="postfix" stretchy="false">)</mo>
+                      <mn>14</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mtext>US$2.30</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>=</mo>
+                <mfrac>
+                  <mtext>US$180M</mtext>
+                  <mtext>78M</mtext>
+                </mfrac>
+              </mrow>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+      <p>
+        Given the ~50% returns I’d like to earn, I cannot purchase shares of this company at any price higher than US$1.50. Furthermore, supposing the company pays out 50% of year-13 earnings as a dividend and earnings grow at 5% per annum on average, the company’s earnings-per share (EPS) next year is approximately US$0.57; implying a low forward-year going-in P/E of ~2.6x:
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mtable displaystyle="true" columnalign="left right left right" style="width:100%;">
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
+              <mtext>US$0.57</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mo fence="true" form="prefix">[</mo>
+                    <mfrac>
                       <mrow>
                         <mo fence="true" form="prefix">(</mo>
-                        <mtext>1</mtext>
-                        <mo>+</mo>
-                        <mtext>5%</mtext>
+                        <mfrac>
+                          <mtext>US$40M</mtext>
+                          <mtext>50%</mtext>
+                        </mfrac>
                         <mo fence="true" form="postfix">)</mo>
                       </mrow>
-                      <mn>12</mn>
-                    </msup>
-                  </mfrac>
-                  <mo fence="true" form="postfix">]</mo>
-                </mrow>
-                <mtext>78M</mtext>
-              </mfrac>
-            </mrow>
-          </mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
-            <mtext>
-              <span class="tml-eqn"></span>
-            </mtext>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
-            <mtext>2.6x</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+                      <msup>
+                        <mrow>
+                          <mo fence="true" form="prefix">(</mo>
+                          <mtext>1</mtext>
+                          <mo>+</mo>
+                          <mtext>5%</mtext>
+                          <mo fence="true" form="postfix">)</mo>
+                        </mrow>
+                        <mn>12</mn>
+                      </msup>
+                    </mfrac>
+                    <mo fence="true" form="postfix">]</mo>
+                  </mrow>
+                  <mtext>78M</mtext>
+                </mfrac>
+              </mrow>
+            </mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
+              <mtext>
+                <span class="tml-eqn"></span>
+              </mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
+              <mtext>2.6x</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>≈</mo>
+                <mfrac>
+                  <mtext>US$1.50</mtext>
+                  <mtext>US$0.57</mtext>
+                </mfrac>
+              </mrow>
+            </mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
+              <mtext>
+                <span class="tml-eqn"></span>
+              </mtext>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+      <p>
+        You might think US$1.50/share is unreasonably low for this hypothetical company, given the high 10% discount rate, the low P/E of ~4.0x (US$2.30/US$0.57), or the high 50% target return—and you are right. But the only way to earn unreasonably high returns is to pay unreasonably low prices. At least, that’s what the math says:
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mrow>
+          <mtext>% holding period return</mtext>
+          <mo>=</mo>
+          <mfrac>
             <mrow>
-              <mo>≈</mo>
-              <mfrac>
-                <mtext>US$1.50</mtext>
-                <mtext>US$0.57</mtext>
-              </mfrac>
+              <mtext>Sale Price</mtext>
+              <mo>+</mo>
+              <mtext>Dividends</mtext>
             </mrow>
-          </mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
-            <mtext>
-              <span class="tml-eqn"></span>
-            </mtext>
-          </mtd>
-        </mtr>
-      </mtable>
-    </math>
-    <p>
-      You might think US$1.50/share is unreasonably low for this hypothetical company, given the high 10% discount rate, the low P/E of ~4.0x (US$2.30/US$0.57), or the high 50% target return—and you are right. But the only way to earn unreasonably high returns is to pay unreasonably low prices. At least, that’s what the math says:
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mrow>
-        <mtext>% holding period return</mtext>
-        <mo>=</mo>
-        <mfrac>
-          <mrow>
-            <mtext>Sale Price</mtext>
-            <mo>+</mo>
-            <mtext>Dividends</mtext>
-          </mrow>
-          <mtext>Purchase Price</mtext>
-        </mfrac>
-        <mo>−</mo>
-        <mn>1</mn>
-      </mrow>
-    </math>
-    <p>
-      Supposing I buy shares of this company and sell them for $5 each after 20 years. Purchasing at the unreasonably low price of US$1.50/share would be rewarded with ~1.6x higher returns that purchasing at the fair price of US$2.30:
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mtable displaystyle="true" columnalign="left right left right" style="width:100%;">
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
-            <mtext>618%</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>=</mo>
-              <mfrac>
-                <mrow>
-                  <mtext>US$5</mtext>
-                  <mo>+</mo>
-                  <mtext>US$5.70</mtext>
-                </mrow>
-                <mtext>US$1.50</mtext>
-              </mfrac>
-              <mo>−</mo>
-              <mn>1</mn>
-            </mrow>
-          </mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
-            <mtext>
-              <span class="tml-eqn"></span>
-            </mtext>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
-            <mtext>368%</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>=</mo>
-              <mfrac>
-                <mrow>
-                  <mtext>US$5</mtext>
-                  <mo>+</mo>
-                  <mtext>US$5.70</mtext>
-                </mrow>
-                <mtext>US$2.30</mtext>
-              </mfrac>
-              <mo>−</mo>
-              <mn>1</mn>
-            </mrow>
-          </mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
-            <mtext>
-              <span class="tml-eqn"></span>
-            </mtext>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
-            <mtext>1.6x</mtext>
-          </mtd>
-          <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
-            <mrow>
-              <mo>≈</mo>
-              <mfrac>
-                <mtext>618%</mtext>
-                <mtext>368%</mtext>
-              </mfrac>
-            </mrow>
-          </mtd>
-          <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
-            <mtext>
-              <span class="tml-eqn"></span>
-            </mtext>
-          </mtd>
-        </mtr>
-      </mtable>
-    </math>
-    <p>
-      In general,
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mrow>
-        <mtext>Return Improvement</mtext>
-        <mo>=</mo>
-        <mfrac>
-          <mrow>
-            <mtext>(1+Target Return)</mtext>
-            <mo>×</mo>
-            <mo form="prefix" stretchy="false">(</mo>
-            <mtext>Sale Price</mtext>
-            <mo>+</mo>
-            <mtext>Dividend</mtext>
-            <mo form="postfix" stretchy="false">)</mo>
-            <mo>−</mo>
-            <mtext>Fair Value</mtext>
-          </mrow>
-          <mrow>
-            <mtext>Sale Price</mtext>
-            <mo>+</mo>
-            <mtext>Dividend</mtext>
-            <mo>−</mo>
-            <mtext>Fair Value</mtext>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </math>
-    <p>
-      The improvement in returns is strictly greater than 1 and asymptotic with respect to your chosen target return. That means you can arbitrarily improve your returns with no change to differential downside performance by targeting arbitrarily high returns—in other words, by purchasing at arbitrarily lower prices. Conversely, by purchasing at higher prices, you achieve arbitrarily lower returns. <b>Crucially, the same asymmetric changes in returns are impossible to achieve by realizing higher or lower sale prices and dividends.</b>
-    </p>
-    <h3>Practical Considerations</h3>
-    <h4>Uncertainty Respecting The Future Dividend</h4>
-    <p>
-      A company that cannot or will never pay a dividend has no value to an investor in its common shares. If you are uncertain with respect to the company’s ability to 1) pay a dividend at all, ever, 2) pay a dividend and sustain it, or 3) pay a dividend as soon as you predict it to be paid, then you must make downward revisions to the dollar-amount of the dividend or the timing of that dividend or both. Conservatively, the dividend you use in your share price calculations should represent on in which you have nearly full confidence could likely be realized within the year  you predict it to be realized. For example, if you are only 80% certain that a company can pay a dividend of between $1.50-$2.00 beginning 4 years from now and grow that dividend at 2% per year, then you should lower your forecast. A better forecast may be to predict a dividend of $0.50-$0.75 beginning 8 years from now, declining at -1% per year. Even if this prediction is unreasonably low, it’s far more likely to be realized or exceeded.
-    </p>
-    <p>
-      Whereas most investors are surprised by poor quarterly earnings <i>after they purchase the stock,</i> by essentially erasing forecast dividend dollars, you pre-emptively bake that risk into your purchase price <i>before you purchase the stock,</i> ensuring you never buy a stock unless it is substantially shielded from a disastrous short-term financial showing.
-    </p>
-    <h4>Uncertainty Respecting The Appropriate Discount Rate</h4>
-    <p>
-      The appropriate discount rate is the sum of 1) the average return of similar stocks (opportunity cost) and 2) an adjustment attributable to the incremental uncertainty of your target stock.
-    </p>
-    <h5>Addressing The Risk-Free Rate of Return</h5>
-    <p>
-      Although traditional academic finance advocates for the use of a baseline, risk-free rate of return in discount rate estimation, I believe such a practice is unnecessary. The risk-free rate of return is a theoretical construct. Essentially nobody can earn that risk-free rate of return: it is not a rate derived from market transactions. Furthermore, any assessment of the average return of similar investments already bakes in the realizable risk-free rate of return. Therefore, including a risk-free rate in any regression- or model-based discount rate formulation underestimates the appropriate discount rate by, commonly, at least 1.2 times that rate and skews your ultimately valuation upwards by a far greater factor.
-    </p>
-    <h5>The Average Return of Similar Investments</h5>
-    <p>
-      If you pick stocks, you don’t buy “stocks” as a class. So, don’t use the average return on “stocks” to benchmark the average return of investments which are similar to your target stock. Your true opportunity cost is necessarily greater than the average return of all stocks, such that using that average substantially underestimates the discount rate and inflates your estimated fair price.
-    </p>
-    <h5>The Incremental Risk Adjustment</h5>
-    <p>
-      The incremental risk adjustment is the most important component of discount rate estimation because it grounds the relative valuation across your investment universe. Your estimate for the average return of similar investments should be similar for like companies: if the incremental risk adjustment is improperly considered, then your ultimate valuations for those companies relative to one another will be mis-calibrated. Choosing the appropriate risk adjustment takes many years of experience analyzing and valuing diverse business models.
-    </p>
-    <p>
-      Crucially, the incremental risk adjustment cannot be applied as a multiplicative factor (addition is required). Multiplication introduces a scale transformation to the denominator of your valuation which has unrealistically large impacts on your ultimate fair price calculation. In other words, using multiplication makes your valuation highly sensitive to the adjustment factor, such that the other relevant valuation inputs are rendered all but meaningless.
-    </p>
-    <p>
-      The adjustment is particularly important for companies with <b>high variability</b> in expected returns due to operational risks. Somehow, these kinds of operations traditionally receive the least-rigorous consideration on discount rates. High variability in expected returns can also be compounded by market risks when the underlying business is dependent on short-term sentiment in financial markets. For example, in cases where the most similar, publicly-listed competitors of the company are structurally different from your target company. If a company exhibits high variance in expected returns, then you are necessarily less certain of your valuation and that must reflect in a higher discount rate.
-    </p>
-    <h5>General rules Respecting Discount Rates</h5>
-    <p>
-      Meticulous calculation of discount rates is useless because you will be wrong. Additionally, if you are correctly pricing your risk across the entire term structure, discount rates tend to normalize around the 9-15% range regardless of where specific tenors trade in the spot market. A sufficiently experienced investor should be able to reasonably estimate a discount rate on judgement alone. Discount rates greater than 18% are typically indicative of extremely special situations and those less than 7% are typically reserved for companies forecast to liquidate.
-    </p>
-    <h4>Uncertainty Respecting The Appropriate Growth Rate</h4>
-    <p>
-      Most ultra-large companies don’t die, so if any are trading at negative implied perpetual growth rates, you may be staring at a once-in-a decade type of opportunity (approximately an 8-10-times-in-a-lifetime opportunity). Although most such companies grow forever, it’s essentially impossible to find an appropriate growth rate for valuation purposes. As a result, ultra-large companies should typically be avoided except in times of extreme economic stress.
-    </p>
-    <p>
-      Some non-ultra-large companies do die, and for these companies, forecasting perpetual decline may be appropriate, depending on the rate of decline. These companies may exist in problematic industries or suffer from mismanagement and require unique analysis.
-    </p>
-    <p>
-      Generally, the unreasonably conservative investor should choose the most pessimistic of the realistic perpetual growth rates—such that there is essentially no opportunity for the company to appear undervalued on the basis of growth. Market-implied perpetual growth rates fluctuate over time and when they reach their lowest levels, stock prices will also fall and approach your estimate of appropriate purchase prices. The only way to protect against prematurely buying into these situations is by specifying grossly low growth rates as valuation inputs.
-    </p>
-    <h5>The Capitalization Rate</h5>
-    <p>
-      The capitalization rate is a concept borrowed from real estate valuation. It is the difference between the discount rate and the perpetual growth rate and drives your valuation. Except in certain unique industries, it typically falls between 7-12%. Stabilizing your valuation around a chosen capitalization rate is useful because one capitalization rate can accommodate a range of discount-rate-growth-rate combinations. For example, a capitalization rate of 10% is possible in discount-rate-growth-rate cases of 12%/2%, 8%/-2%, or 10%/0%. This allows extra flexibility when thinking about the trade-off between your opportunity costs and the company’s growth.
-    </p>
-    <h4>The Impact of Capital Intensity on Valuation methodology</h4>
-    <h5>Dividends Vs. Free Cash Flow</h5>
-    <p>
-      Since dividends are declared at the discretion of the board, businesses planning for increased capital intensity over time may sustain and fund arbitrarily high dividend payments through potentially costly sources of capital. Obviously, such a policy is likely to lead to cash-flow or solvency issues in the near-to-medium-term, compounded by the risk of a cut to its dividend payout, which may impair the company’s ability to issue new capital on reasonable terms. For these businesses, valuation on the basis of dividends will overestimate their value.
-    </p>
-    <p>
-      Free cash flow (cash provided by continuing operating activities less capital expenditures) is a better way to think about these businesses. Rather than baking in the board’s pre-conceptions about the appropriate dividend, free cash flow encapsulates the full cash-operating reality of the business today. Obviously, the cash-operating reality of the business today has no bearing on the economic reality of the business in the future, but the investor must account for capital intensity somehow. Any additional uncertainty arising due to abnormal discrepancies between cash flows and earnings must reflect in your valuation as a heavy and punitive discount to your chosen cash flow input. Experience and judgement is necessary to know the appropriate discount to apply.
-    </p>
-    <h5>Capitalization Rates Vs. Trading Multiples</h5>
-    <p>
-      Capitalization rates and trading multiples share a deterministic relationship:
-    </p>
-    <math display="block" class="tml-display" style="display:block math;">
-      <mrow>
-        <mtext>Multiple</mtext>
-        <mo>=</mo>
-        <mfrac>
+            <mtext>Purchase Price</mtext>
+          </mfrac>
+          <mo>−</mo>
           <mn>1</mn>
-          <mtext>Time-weighted-average cap rate</mtext>
-        </mfrac>
-      </mrow>
-    </math>
-    <p>
-      If you apply a 30x multiple to free cash flows, you are imputing a capitalization rate of ~3%. This is probably unrealistic as plausible implied discount-rate-growth-rate combinations include 12%/9%, 8%/5%, or 3%/0%—in other words, normal companies need to compound at 5% forever, faster than the long-term average global rate of GDP growth (and effectively take over the world) for your valuation to make sense. No-growth companies would be valued at an imputed holding-period opportunity cost to you of 3%, which is unlikely to be realistic, given the history of equity returns sits at approximately 8-10%. Multiples must always be scrutinized.
-    </p>
-    <p>
-      For a variety of reasons, boards and management typically prefer to pay a stable dividend. In fact, many boards will set policy at flat dollar amounts per share, growing at predictable increments. As a result, if fundamental performance remains reliable, the dividend is, from a structural governance perspective, by far the most stable cash stream an investor can use. In contrast, free cash flows are subject to the vicissitudes of corporate budgeting and planning: capital expenditures and operating expenses are not structurally guaranteed to remain the same year-on-year. Obviously, neither are sales (and much less cash receipts from customers). This kind of structural variability in free cash flow makes it unsuited to the blind application of valuation multiples, without proper consideration of the capitalization-rate implications of those multiples; especially since the impact of variability is magnified if the multiple is unduly high.
-    </p>
-    <h4>The Impact of Accounting on Valuation Methodology</h4>
-    <h5>Free Cash Flow Vs. Earnings</h5>
-    <p>
-      In all cases and for all businesses, the correct number to use in valuation is the cyclically-normalized, inflation-adjusted, economic earnings of the continuing business, colloquially termed “earnings power”. Disappointingly, International Financial Reporting Standards and Generally Accepted Accounting Principles make the calculation of such a number impossible for most companies—and in many cases, impossible for entire sectors. Since companies do not report their earnings power, investors are left with only cash flows or earnings. Furthermore, it’s incorrect to split the difference and use both, as you would effectively be valuing a different company whose characteristics match neither the cash flow characteristics nor the earnings characteristics of the company in question.
-    </p>
-    <p>
-      Using the correct metric requires some understanding of the practical application of accounting policies at the Financial-Planning-and-Analysis or Controller level. However, the investor can draw several insights from the financial statements:
-    </p>
-    <ul>
-      <li>
-        if the company selects accounting policies in service of buttressing earnings, then the truth will show itself in the cash flows, and vice-versa;
-      </li>
-      <li>
-        if the company pursues a program of acquisitions-based growth, then earnings alone will not capture the true, pro-forma impact of those acquisitions and you must look to the cash flows, even if they are inadequate;
-      </li>
-      <li>
-        if the company has consistently unstable working capital policies which create non-sensical free cash flow metrics, the proper analysis is to apply a heavy discount to a normalized free cash flow metric and proceed with valuation (rather than use earnings);
-      </li>
-      <li>
-        if the company claims to be investing in growth, that growth must be visible today: even if management claims the growth will not kick in until some future year, absent growth today their investments irresponsibly imperil the company and you should penalize their brash behaviour by both discounting operating cash flows and inflating expected capital expenditures; and
-      </li>
-      <li>
-        generally, the question to be answered is not about materiality today, but about materiality in the future: immaterial streams of revenues or costs today may become material in the future, and are therefore material to your valuation; improper consideration of these future, material revenues and costs and whether they appear in earnings or cash flows, puts risk into your valuation analysis.
-      </li>
-    </ul>
-    <h5>The Balance Sheet</h5>
-    <p>
-      Until now, we’ve avoided any discussion of using the balance sheet for valuation purposes and the reason is simple: the balance sheet is mostly useless.
-    </p>
-    <p>
-      Accounting information is the only information investors can use to make decisions. As a result, investors are mercy of the trade-offs inherent in accounting policies. Unfortunately, the current system of accounting requires a strict trade-off in the accuracy of exactly one of either the income statement or the balance sheet, with the cash flow statement acting as the plug. Typically, given the heightened investor focus on earnings, the income statement is prioritized.
-    </p>
-    <p>
-      Still, there are some sectors where analysis of the balance sheet is useful. While every company has a similar income statement and cash flow statement, not every balance sheet looks the same. For companies with particularly ambiguous or wide-reaching operations, the balance sheet serves as an excellent starting point for assessing 1) precisely what kind of business this is and 2) whether managements’ commentary aligns with the expected balance sheet structure.
-    </p>
-    <p>
-      For example, today, Apple operates a small-scale financial services business including Apple Card and Apple Pay. However, their balance sheet omits any reserves maintained to process payments, the extent of credit risk, if any, relating to Apple Card, etc. The company itself also largely focuses its story on other businesses. Depending on your outlook for the company, it might be useful to determine the extent to which Apple’s value be attributable to financial services and which is the proper valuation methodology, given the salience of that business.
-    </p>
-    <h4>Uncertainty Respecting Future Business Prospects</h4>
-    <p>
-      Any investment is dependent on both the characteristics of the security and the underlying business. Until now, we’ve paid substantially more attention to the characteristics of the security (common shares); but more attention could (and arguably should) be paid to the business.
-    </p>
-    <p>
-      Analysis of future business prospects is difficult. There are usually few variables to business success, but the values of those variables in the future are impossible to know. For example, the business of manufacturing cars is simple to understand: how many cars are manufactured and at what cost, how many are sold and at what price, and what is the cost of financing, building, staffing, and operating the factories and dealerships to manufacture and sell those cars? These variables are easy to come up with, but their future values are impossible to know. These uncertainties are compounded by the fact that managers are not required to stay in the same businesses over time. For example, a manager can sell its car business and to enter the laundry business instead, dragging all their investors along with them.
-    </p>
-    <p>
-      For sound businesses that are easy to understand which are run by good managers and have shown the consistent, long-term support of a diversified shareholding base, any improvement or deterioration in future business prospects tends to net out over many business lines and over time, despite uncertainty respecting future business prospects.
-    </p>
-    <h3>Why Be Unreasonably Conservative?</h3>
-    <p>
-      Although it may be possible to earn a good return by being “reasonably” conservative or even an adequate return by eschewing conservatism, I am not in this business to merely do well. I am in this business to be the best. In basketball, the difference between a good free-throw shooter and the best free-throw shooter is massive.
-    </p>
-    <p>
-      The best investor earns the best returns and you can’t beat an investor who receives assets for free—no matter the price for which they are sold, the return would be infinite. To be the best investor, you must obsess over purchase prices and obsession over purchase prices requires obsession over valuation because that’s the only way to calculate what you would pay for an investment. The only way to avoid overpaying is to be unreasonably conservative.
-    </p>
+        </mrow>
+      </math>
+      <p>
+        Supposing I buy shares of this company and sell them for $5 each after 20 years. Purchasing at the unreasonably low price of US$1.50/share would be rewarded with ~1.6x higher returns that purchasing at the fair price of US$2.30:
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mtable displaystyle="true" columnalign="left right left right" style="width:100%;">
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
+              <mtext>618%</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mtext>US$5</mtext>
+                    <mo>+</mo>
+                    <mtext>US$5.70</mtext>
+                  </mrow>
+                  <mtext>US$1.50</mtext>
+                </mfrac>
+                <mo>−</mo>
+                <mn>1</mn>
+              </mrow>
+            </mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
+              <mtext>
+                <span class="tml-eqn"></span>
+              </mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
+              <mtext>368%</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mtext>US$5</mtext>
+                    <mo>+</mo>
+                    <mtext>US$5.70</mtext>
+                  </mrow>
+                  <mtext>US$2.30</mtext>
+                </mfrac>
+                <mo>−</mo>
+                <mn>1</mn>
+              </mrow>
+            </mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
+              <mtext>
+                <span class="tml-eqn"></span>
+              </mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 0em;width:50%;"></mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;">
+              <mtext>1.6x</mtext>
+            </mtd>
+            <mtd class="tml-left" style="padding:0.7ex 0em 0.7ex 0em;">
+              <mrow>
+                <mo>≈</mo>
+                <mfrac>
+                  <mtext>618%</mtext>
+                  <mtext>368%</mtext>
+                </mfrac>
+              </mrow>
+            </mtd>
+            <mtd class="tml-right" style="padding:0.7ex 0em 0.7ex 1em;width:50%;">
+              <mtext>
+                <span class="tml-eqn"></span>
+              </mtext>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+      <p>
+        In general,
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mrow>
+          <mtext>Return Improvement</mtext>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mtext>(1+Target Return)</mtext>
+              <mo>×</mo>
+              <mo form="prefix" stretchy="false">(</mo>
+              <mtext>Sale Price</mtext>
+              <mo>+</mo>
+              <mtext>Dividend</mtext>
+              <mo form="postfix" stretchy="false">)</mo>
+              <mo>−</mo>
+              <mtext>Fair Value</mtext>
+            </mrow>
+            <mrow>
+              <mtext>Sale Price</mtext>
+              <mo>+</mo>
+              <mtext>Dividend</mtext>
+              <mo>−</mo>
+              <mtext>Fair Value</mtext>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+      <p>
+        The improvement in returns is strictly greater than 1 and asymptotic with respect to your chosen target return. That means you can arbitrarily improve your returns with no change to differential downside performance by targeting arbitrarily high returns—in other words, by purchasing at arbitrarily lower prices. Conversely, by purchasing at higher prices, you achieve arbitrarily lower returns. <b>Crucially, the same asymmetric changes in returns are impossible to achieve by realizing higher or lower sale prices and dividends.</b>
+      </p>
+      <h3>Practical Considerations</h3>
+      <h4>Uncertainty Respecting The Future Dividend</h4>
+      <p>
+        A company that cannot or will never pay a dividend has no value to an investor in its common shares. If you are uncertain with respect to the company’s ability to 1) pay a dividend at all, ever, 2) pay a dividend and sustain it, or 3) pay a dividend as soon as you predict it to be paid, then you must make downward revisions to the dollar-amount of the dividend or the timing of that dividend or both. Conservatively, the dividend you use in your share price calculations should represent on in which you have nearly full confidence could likely be realized within the year  you predict it to be realized. For example, if you are only 80% certain that a company can pay a dividend of between $1.50-$2.00 beginning 4 years from now and grow that dividend at 2% per year, then you should lower your forecast. A better forecast may be to predict a dividend of $0.50-$0.75 beginning 8 years from now, declining at -1% per year. Even if this prediction is unreasonably low, it’s far more likely to be realized or exceeded.
+      </p>
+      <p>
+        Whereas most investors are surprised by poor quarterly earnings <i>after they purchase the stock,</i> by essentially erasing forecast dividend dollars, you pre-emptively bake that risk into your purchase price <i>before you purchase the stock,</i> ensuring you never buy a stock unless it is substantially shielded from a disastrous short-term financial showing.
+      </p>
+      <h4>Uncertainty Respecting The Appropriate Discount Rate</h4>
+      <p>
+        The appropriate discount rate is the sum of 1) the average return of similar stocks (opportunity cost) and 2) an adjustment attributable to the incremental uncertainty of your target stock.
+      </p>
+      <h5>Addressing The Risk-Free Rate of Return</h5>
+      <p>
+        Although traditional academic finance advocates for the use of a baseline, risk-free rate of return in discount rate estimation, I believe such a practice is unnecessary. The risk-free rate of return is a theoretical construct. Essentially nobody can earn that risk-free rate of return: it is not a rate derived from market transactions. Furthermore, any assessment of the average return of similar investments already bakes in the realizable risk-free rate of return. Therefore, including a risk-free rate in any regression- or model-based discount rate formulation underestimates the appropriate discount rate by, commonly, at least 1.2 times that rate and skews your ultimately valuation upwards by a far greater factor.
+      </p>
+      <h5>The Average Return of Similar Investments</h5>
+      <p>
+        If you pick stocks, you don’t buy “stocks” as a class. So, don’t use the average return on “stocks” to benchmark the average return of investments which are similar to your target stock. Your true opportunity cost is necessarily greater than the average return of all stocks, such that using that average substantially underestimates the discount rate and inflates your estimated fair price.
+      </p>
+      <h5>The Incremental Risk Adjustment</h5>
+      <p>
+        The incremental risk adjustment is the most important component of discount rate estimation because it grounds the relative valuation across your investment universe. Your estimate for the average return of similar investments should be similar for like companies: if the incremental risk adjustment is improperly considered, then your ultimate valuations for those companies relative to one another will be mis-calibrated. Choosing the appropriate risk adjustment takes many years of experience analyzing and valuing diverse business models.
+      </p>
+      <p>
+        Crucially, the incremental risk adjustment cannot be applied as a multiplicative factor (addition is required). Multiplication introduces a scale transformation to the denominator of your valuation which has unrealistically large impacts on your ultimate fair price calculation. In other words, using multiplication makes your valuation highly sensitive to the adjustment factor, such that the other relevant valuation inputs are rendered all but meaningless.
+      </p>
+      <p>
+        The adjustment is particularly important for companies with <b>high variability</b> in expected returns due to operational risks. Somehow, these kinds of operations traditionally receive the least-rigorous consideration on discount rates. High variability in expected returns can also be compounded by market risks when the underlying business is dependent on short-term sentiment in financial markets. For example, in cases where the most similar, publicly-listed competitors of the company are structurally different from your target company. If a company exhibits high variance in expected returns, then you are necessarily less certain of your valuation and that must reflect in a higher discount rate.
+      </p>
+      <h5>General rules Respecting Discount Rates</h5>
+      <p>
+        Meticulous calculation of discount rates is useless because you will be wrong. Additionally, if you are correctly pricing your risk across the entire term structure, discount rates tend to normalize around the 9-15% range regardless of where specific tenors trade in the spot market. A sufficiently experienced investor should be able to reasonably estimate a discount rate on judgement alone. Discount rates greater than 18% are typically indicative of extremely special situations and those less than 7% are typically reserved for companies forecast to liquidate.
+      </p>
+      <h4>Uncertainty Respecting The Appropriate Growth Rate</h4>
+      <p>
+        Most ultra-large companies don’t die, so if any are trading at negative implied perpetual growth rates, you may be staring at a once-in-a decade type of opportunity (approximately an 8-10-times-in-a-lifetime opportunity). Although most such companies grow forever, it’s essentially impossible to find an appropriate growth rate for valuation purposes. As a result, ultra-large companies should typically be avoided except in times of extreme economic stress.
+      </p>
+      <p>
+        Some non-ultra-large companies do die, and for these companies, forecasting perpetual decline may be appropriate, depending on the rate of decline. These companies may exist in problematic industries or suffer from mismanagement and require unique analysis.
+      </p>
+      <p>
+        Generally, the unreasonably conservative investor should choose the most pessimistic of the realistic perpetual growth rates—such that there is essentially no opportunity for the company to appear undervalued on the basis of growth. Market-implied perpetual growth rates fluctuate over time and when they reach their lowest levels, stock prices will also fall and approach your estimate of appropriate purchase prices. The only way to protect against prematurely buying into these situations is by specifying grossly low growth rates as valuation inputs.
+      </p>
+      <h5>The Capitalization Rate</h5>
+      <p>
+        The capitalization rate is a concept borrowed from real estate valuation. It is the difference between the discount rate and the perpetual growth rate and drives your valuation. Except in certain unique industries, it typically falls between 7-12%. Stabilizing your valuation around a chosen capitalization rate is useful because one capitalization rate can accommodate a range of discount-rate-growth-rate combinations. For example, a capitalization rate of 10% is possible in discount-rate-growth-rate cases of 12%/2%, 8%/-2%, or 10%/0%. This allows extra flexibility when thinking about the trade-off between your opportunity costs and the company’s growth.
+      </p>
+      <h4>The Impact of Capital Intensity on Valuation methodology</h4>
+      <h5>Dividends Vs. Free Cash Flow</h5>
+      <p>
+        Since dividends are declared at the discretion of the board, businesses planning for increased capital intensity over time may sustain and fund arbitrarily high dividend payments through potentially costly sources of capital. Obviously, such a policy is likely to lead to cash-flow or solvency issues in the near-to-medium-term, compounded by the risk of a cut to its dividend payout, which may impair the company’s ability to issue new capital on reasonable terms. For these businesses, valuation on the basis of dividends will overestimate their value.
+      </p>
+      <p>
+        Free cash flow (cash provided by continuing operating activities less capital expenditures) is a better way to think about these businesses. Rather than baking in the board’s pre-conceptions about the appropriate dividend, free cash flow encapsulates the full cash-operating reality of the business today. Obviously, the cash-operating reality of the business today has no bearing on the economic reality of the business in the future, but the investor must account for capital intensity somehow. Any additional uncertainty arising due to abnormal discrepancies between cash flows and earnings must reflect in your valuation as a heavy and punitive discount to your chosen cash flow input. Experience and judgement is necessary to know the appropriate discount to apply.
+      </p>
+      <h5>Capitalization Rates Vs. Trading Multiples</h5>
+      <p>
+        Capitalization rates and trading multiples share a deterministic relationship:
+      </p>
+      <math display="block" class="tml-display" style="display:block math;">
+        <mrow>
+          <mtext>Multiple</mtext>
+          <mo>=</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mtext>Time-weighted-average cap rate</mtext>
+          </mfrac>
+        </mrow>
+      </math>
+      <p>
+        If you apply a 30x multiple to free cash flows, you are imputing a capitalization rate of ~3%. This is probably unrealistic as plausible implied discount-rate-growth-rate combinations include 12%/9%, 8%/5%, or 3%/0%—in other words, normal companies need to compound at 5% forever, faster than the long-term average global rate of GDP growth (and effectively take over the world) for your valuation to make sense. No-growth companies would be valued at an imputed holding-period opportunity cost to you of 3%, which is unlikely to be realistic, given the history of equity returns sits at approximately 8-10%. Multiples must always be scrutinized.
+      </p>
+      <p>
+        For a variety of reasons, boards and management typically prefer to pay a stable dividend. In fact, many boards will set policy at flat dollar amounts per share, growing at predictable increments. As a result, if fundamental performance remains reliable, the dividend is, from a structural governance perspective, by far the most stable cash stream an investor can use. In contrast, free cash flows are subject to the vicissitudes of corporate budgeting and planning: capital expenditures and operating expenses are not structurally guaranteed to remain the same year-on-year. Obviously, neither are sales (and much less cash receipts from customers). This kind of structural variability in free cash flow makes it unsuited to the blind application of valuation multiples, without proper consideration of the capitalization-rate implications of those multiples; especially since the impact of variability is magnified if the multiple is unduly high.
+      </p>
+      <h4>The Impact of Accounting on Valuation Methodology</h4>
+      <h5>Free Cash Flow Vs. Earnings</h5>
+      <p>
+        In all cases and for all businesses, the correct number to use in valuation is the cyclically-normalized, inflation-adjusted, economic earnings of the continuing business, colloquially termed “earnings power”. Disappointingly, International Financial Reporting Standards and Generally Accepted Accounting Principles make the calculation of such a number impossible for most companies—and in many cases, impossible for entire sectors. Since companies do not report their earnings power, investors are left with only cash flows or earnings. Furthermore, it’s incorrect to split the difference and use both, as you would effectively be valuing a different company whose characteristics match neither the cash flow characteristics nor the earnings characteristics of the company in question.
+      </p>
+      <p>
+        Using the correct metric requires some understanding of the practical application of accounting policies at the Financial-Planning-and-Analysis or Controller level. However, the investor can draw several insights from the financial statements:
+      </p>
+      <ul>
+        <li>
+          if the company selects accounting policies in service of buttressing earnings, then the truth will show itself in the cash flows, and vice-versa;
+        </li>
+        <li>
+          if the company pursues a program of acquisitions-based growth, then earnings alone will not capture the true, pro-forma impact of those acquisitions and you must look to the cash flows, even if they are inadequate;
+        </li>
+        <li>
+          if the company has consistently unstable working capital policies which create non-sensical free cash flow metrics, the proper analysis is to apply a heavy discount to a normalized free cash flow metric and proceed with valuation (rather than use earnings);
+        </li>
+        <li>
+          if the company claims to be investing in growth, that growth must be visible today: even if management claims the growth will not kick in until some future year, absent growth today their investments irresponsibly imperil the company and you should penalize their brash behaviour by both discounting operating cash flows and inflating expected capital expenditures; and
+        </li>
+        <li>
+          generally, the question to be answered is not about materiality today, but about materiality in the future: immaterial streams of revenues or costs today may become material in the future, and are therefore material to your valuation; improper consideration of these future, material revenues and costs and whether they appear in earnings or cash flows, puts risk into your valuation analysis.
+        </li>
+      </ul>
+      <h5>The Balance Sheet</h5>
+      <p>
+        Until now, we’ve avoided any discussion of using the balance sheet for valuation purposes and the reason is simple: the balance sheet is mostly useless.
+      </p>
+      <p>
+        Accounting information is the only information investors can use to make decisions. As a result, investors are mercy of the trade-offs inherent in accounting policies. Unfortunately, the current system of accounting requires a strict trade-off in the accuracy of exactly one of either the income statement or the balance sheet, with the cash flow statement acting as the plug. Typically, given the heightened investor focus on earnings, the income statement is prioritized.
+      </p>
+      <p>
+        Still, there are some sectors where analysis of the balance sheet is useful. While every company has a similar income statement and cash flow statement, not every balance sheet looks the same. For companies with particularly ambiguous or wide-reaching operations, the balance sheet serves as an excellent starting point for assessing 1) precisely what kind of business this is and 2) whether managements’ commentary aligns with the expected balance sheet structure.
+      </p>
+      <p>
+        For example, today, Apple operates a small-scale financial services business including Apple Card and Apple Pay. However, their balance sheet omits any reserves maintained to process payments, the extent of credit risk, if any, relating to Apple Card, etc. The company itself also largely focuses its story on other businesses. Depending on your outlook for the company, it might be useful to determine the extent to which Apple’s value be attributable to financial services and which is the proper valuation methodology, given the salience of that business.
+      </p>
+      <h4>Uncertainty Respecting Future Business Prospects</h4>
+      <p>
+        Any investment is dependent on both the characteristics of the security and the underlying business. Until now, we’ve paid substantially more attention to the characteristics of the security (common shares); but more attention could (and arguably should) be paid to the business.
+      </p>
+      <p>
+        Analysis of future business prospects is difficult. There are usually few variables to business success, but the values of those variables in the future are impossible to know. For example, the business of manufacturing cars is simple to understand: how many cars are manufactured and at what cost, how many are sold and at what price, and what is the cost of financing, building, staffing, and operating the factories and dealerships to manufacture and sell those cars? These variables are easy to come up with, but their future values are impossible to know. These uncertainties are compounded by the fact that managers are not required to stay in the same businesses over time. For example, a manager can sell its car business and to enter the laundry business instead, dragging all their investors along with them.
+      </p>
+      <p>
+        For sound businesses that are easy to understand which are run by good managers and have shown the consistent, long-term support of a diversified shareholding base, any improvement or deterioration in future business prospects tends to net out over many business lines and over time, despite uncertainty respecting future business prospects.
+      </p>
+      <h3>Why Be Unreasonably Conservative?</h3>
+      <p>
+        Although it may be possible to earn a good return by being “reasonably” conservative or even an adequate return by eschewing conservatism, I am not in this business to merely do well. I am in this business to be the best. In basketball, the difference between a good free-throw shooter and the best free-throw shooter is massive.
+      </p>
+      <p>
+        The best investor earns the best returns and you can’t beat an investor who receives assets for free—no matter the price for which they are sold, the return would be infinite. To be the best investor, you must obsess over purchase prices and obsession over purchase prices requires obsession over valuation because that’s the only way to calculate what you would pay for an investment. The only way to avoid overpaying is to be unreasonably conservative.
+      </p>
+    </main>
   </body>
 </html>
